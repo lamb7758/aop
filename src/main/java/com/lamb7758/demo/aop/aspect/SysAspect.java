@@ -26,8 +26,8 @@ public class SysAspect {
 	/***
      * 定义controller切入点拦截规则，拦截SystemControllerLog注解的方法
      */
-//	 @Pointcut("@annotation(cn.lamb.aop.annotation.SystemControllerLog)")
-    @Pointcut("execution(* com.lamb7758.demo.controller.*.*(..))")
+	 @Pointcut("@annotation(com.lamb7758.demo.aop.annotation.SystemControllerLog)")
+//    @Pointcut("execution(* com.lamb7758.demo.controller.*.*(..))")
     public void controllerAspect(){
 
     }

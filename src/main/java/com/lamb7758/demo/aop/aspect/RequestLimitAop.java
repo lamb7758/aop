@@ -36,6 +36,11 @@ public class RequestLimitAop {
 //    @Before("within(@com.lamb7758.demo.controller.* *) && @annotation(limit)")
     public void requestLimit(JoinPoint joinPoint, RequestLimit limit) throws Exception {
         try {
+            int count = limit.count();
+            long time = limit.time();
+
+            System.out.println("count: "+count+" -----time:"+time);
+
             Object[] args = joinPoint.getArgs();
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
